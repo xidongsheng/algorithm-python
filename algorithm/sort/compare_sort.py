@@ -11,7 +11,7 @@ def generate_int(n):
     return nums
 
 def main():
-    size = 10000
+    size = 1000000
     nums = generate_int(size)
 
     # python default sort
@@ -21,30 +21,44 @@ def main():
     sec_cost = (datetime.now() - start_time).seconds
     print(f"python sort cost {sec_cost} seconds for {size} integer")
 
-    # selection sort
+    # # selection sort
+    # start_time = datetime.now()
+    # nums_selection_sort = selection_sort(deepcopy(nums))
+    # sec_cost = (datetime.now() - start_time).seconds
+    # print(f"selection sort cost {sec_cost} seconds for {size} integer")
+
+    # # insert sort
+    # start_time = datetime.now()
+    # nums_insert_sort = insert_sort(deepcopy(nums))
+    # sec_cost = (datetime.now() - start_time).seconds
+    # print(f"insert sort cost {sec_cost} seconds for {size} integer")
+
+    # assert nums3 == nums_insert_sort, "wrong insert sort results"
+    # assert nums3 == nums_selection_sort, "wrong selection sort results"
+
+    # # shell sort
+    # start_time = datetime.now()
+    # nums_shell_sort = shell_sort(deepcopy(nums))
+    # sec_cost = (datetime.now() - start_time).seconds
+    # print(f"shell sort cost {sec_cost} seconds for {size} integer")
+
+    # assert nums3 == nums_shell_sort, "wrong shell sort results"
+
+    # merge sort
     start_time = datetime.now()
-    nums_selection_sort = selection_sort(deepcopy(nums))
+    nums_merge_sort = merge_sort(deepcopy(nums))
     sec_cost = (datetime.now() - start_time).seconds
-    print(f"selection sort cost {sec_cost} seconds for {size} integer")
+    print(f"merge sort cost {sec_cost} seconds for {size} integer")
 
-    # insert sort
+    assert nums3 == nums_merge_sort, "wrong merge sort results"
+
+    # quick sort
     start_time = datetime.now()
-    nums_insert_sort = insert_sort(deepcopy(nums))
+    nums_quick_sort = quick_sort(deepcopy(nums))
     sec_cost = (datetime.now() - start_time).seconds
-    print(f"insert sort cost {sec_cost} seconds for {size} integer")
+    print(f"quick sort cost {sec_cost} seconds for {size} integer")
 
-    assert nums3 == nums_insert_sort, "wrong insert sort results"
-    assert nums3 == nums_selection_sort, "wrong selection sort results"
-
-    # shell sort
-    start_time = datetime.now()
-    nums_shell_sort = shell_sort(deepcopy(nums))
-    sec_cost = (datetime.now() - start_time).seconds
-    print(f"shell sort cost {sec_cost} seconds for {size} integer")
-
-    assert nums3 == nums_shell_sort, "wrong shell sort results"
-
-
+    assert nums3 == nums_quick_sort, "wrong quick sort results"
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,4 @@
-
+from random import randint
 
 def bubble_sort(a: list) -> list:
     len_a = len(a)
@@ -50,3 +50,69 @@ def shell_sort(a: list) -> list:
         h = h//3
     
     return a
+
+# merge sort
+def merge(left, right):
+    result = []
+    while len(left) > 0 and len(right) > 0:
+        if left[0] <= right[0]:
+            result.append(left.pop(0))
+        else:
+            result.append(right.pop(0))
+    # the left values，append to the results
+    result += left
+    result += right
+    return result
+
+
+def merge_sort(a: list) -> list:
+    if len(a) <= 1:
+        return a
+    mid = len(a) // 2
+    left = a[:mid]
+    right = a[mid:]
+
+    return merge(merge_sort(left), merge_sort(right))
+
+
+# quick sort
+def partition(a, low, hi):
+    i = low + 1
+    j = hi
+    
+    v = a[randint(low, hi)]
+
+    while(True):
+        while(a[i] < v):
+            i += 1
+            if i == hi:
+                break
+        while(a[j] > v):
+            j -= 1
+            if j == low:
+                break
+        if i >= j:
+            break
+
+        a[i], a[j] = a[j], a[i]
+
+    a[low], a[j] = a[j], a[low]
+    return j
+
+def q_sort(a, low, hi):
+    if low >= hi:
+        return
+    j = partition(a, low, hi)
+    q_sort(a, low, j-1)
+    q_sort(a, j+1, hi)
+
+# partition(list('kratelepuimqcxos'), 0, 15)
+def quick_sort(a: list) -> list:
+    if len(a) <= 1:
+        return a
+    hi = len(a) - 1
+    q_sort(a, 0, hi)
+
+    return a
+
+# print(quick_sort(list('kratelepuimqcxos')))

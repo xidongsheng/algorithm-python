@@ -21,3 +21,6 @@ def test_sort():
         assert bubble_sort(test_cases[case]) == expect_results[case]
         assert selection_sort(test_cases[case]) == expect_results[case]
         assert insert_sort(test_cases[case]) == expect_results[case]
+        assert merge_sort(test_cases[case]) == expect_results[case]
+        assert quick_sort(test_cases[case]) == expect_results[case]
+
