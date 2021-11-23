@@ -1,6 +1,7 @@
 .tox
 .pytest_cache
 *.pyc
+.DS_store
 algs4-data/
 
 # Byte-compiled / optimized / DLL files

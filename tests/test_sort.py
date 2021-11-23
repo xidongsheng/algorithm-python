@@ -1,4 +1,4 @@
-from algorithm.sort.sort import bubble_sort, insert_sort
+from algorithm.sort.sort import *
 
 
 def test_sort():
@@ -17,5 +17,7 @@ def test_sort():
     ]
 
     for case in range(len(test_cases)):
+        assert shell_sort(test_cases[case]) == expect_results[case]
         assert bubble_sort(test_cases[case]) == expect_results[case]
+        assert selection_sort(test_cases[case]) == expect_results[case]
         assert insert_sort(test_cases[case]) == expect_results[case]
