@@ -42,5 +42,6 @@ class FrequencyCounter(object):
         print(f'{word} counts {max_count}')
 
 if __name__ == "__main__":
+    # fc = FrequencyCounter('algs4-data/tale.txt', 8)
     fc = FrequencyCounter('algs4-data/leipzig1M.txt', 10)
     fc.highest()

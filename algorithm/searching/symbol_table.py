@@ -26,7 +26,7 @@ class SequentialSearchST(SymbolTable):
     """sequential implement symbol table"""
 
     def __init__(self):
-        self.first = Node()
+        self.first = None
 
     def put(self, k, v):
         n = self.first
@@ -57,8 +57,9 @@ class SequentialSearchST(SymbolTable):
         return key_list
 
 
-st = SequentialSearchST()
-st.put('aa', 'a')
-st.put('bb', 'b')
-print(st.get('aa'))
-print(st.keys())
+# st = SequentialSearchST()
+# st.put('aa', 'a')
+# st.put('bb', 'b')
+# print(st.get('aa'))
+# print(st.get('a'))
+# print(st.keys())

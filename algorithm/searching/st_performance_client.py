@@ -24,9 +24,9 @@ class FrequencyCounter(object):
                         continue
                     else:
                         if word in self.word_dict.keys():
-                            self.word_dict[word] = self.word_dict[word] + 1
+                            self.word_dict.put(word, self.word_dict.get(word) + 1)
                         else:
-                            self.word_dict[word] = 1
+                            self.word_dict.put(word, 1)
         print(f'the dict keys is {len(self.word_dict.keys())}')
         print(f'the dict size is {sys.getsizeof(self.word_dict)/(1024*1024)} MB')
         process_mem = using(point="dict_initiled")
@@ -36,12 +36,13 @@ class FrequencyCounter(object):
         max_count = 1
         word = ''
         for k in self.word_dict.keys():
-            if self.word_dict[k] > max_count:
-                max_count = self.word_dict[k]
+            if self.word_dict.get(k) > max_count:
+                max_count = self.word_dict.get(k)
                 word = k
         
         print(f'{word} counts {max_count}')
 
 if __name__ == "__main__":
-    fc = FrequencyCounter('algs4-data/leipzig1M.txt', 10)
+    fc = FrequencyCounter('algs4-data/tale.txt', 8)
+    # fc = FrequencyCounter('algs4-data/leipzig1M.txt', 10)
     fc.highest()
