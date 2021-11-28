@@ -23,7 +23,7 @@ class Node(object):
 
 
 class SequentialSearchST(SymbolTable):
-    """sequential implement symbol table"""
+    """sequential implement symbol table, unordered linked list"""
 
     def __init__(self):
         self.first = None
@@ -63,3 +63,21 @@ class SequentialSearchST(SymbolTable):
 # print(st.get('aa'))
 # print(st.get('a'))
 # print(st.keys())
+
+class BinarySearchST(SymbolTable):
+    """in an orderd array, keys and values are sperately in ordered array"""
+
+    def __init__(self):
+        pass
+
+    def rank(self, k):
+        pass
+
+    def put(self, k, v):
+        pass
+
+    def get(self, k):
+        pass
+
+    def keys(self):
+        pass
